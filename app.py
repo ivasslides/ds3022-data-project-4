@@ -27,7 +27,7 @@ def get_s3_object(bucket, key):
     s3 = boto3.client('s3')
     try: 
         response = s3.get_object(Bucket=bucket, Key=key) 
-        return.json.loads(response['Body'].read().decode('utf-8'))
+        return json.loads(response['Body'].read().decode('utf-8'))
     except Exception as e:
         app.log.error(f"Error: {e}")
 
